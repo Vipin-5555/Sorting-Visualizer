@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">Sorting Visualizer</h1>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="theme-btn">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <div class="input-group">
+                <label for="arrayInput">Custom Array:</label>
+                <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas (e.g., 64,34,25,12,22,11,90)" class="array-input">
+            </div>
+            
+            <div class="algorithm-selector">
+                <label for="algorithmSelect">Sorting Algorithm:</label>
+                <select id="algorithmSelect" class="algorithm-dropdown">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+            </div>
+
+            <div class="speed-selector">
+                <label for="speedSelect">Playback Speed:</label>
+                <select id="speedSelect" class="speed-dropdown">
+                    <option value="0">3x Ultra Fast</option>
+                    <option value="1">2.5x Very Fast</option>
+                    <option value="2">2x Fast</option>
+                    <option value="3">1.5x Fast</option>
+                    <option value="4" selected>1x Normal</option>
+                    <option value="5">0.75x Slow</option>
+                    <option value="6">0.5x Slower</option>
+                    <option value="7">0.25x Very Slow</option>
+                    <option value="8">0.2x Ultra Slow</option>
+                </select>
+            </div>
+
+            <div class="control-buttons">
+                <button id="generateBtn" class="btn btn-primary">Generate Random</button>
+                <button id="shuffleBtn" class="btn btn-secondary">Shuffle</button>
+                <button id="startBtn" class="btn btn-success">Start</button>
+                <button id="pauseBtn" class="btn btn-warning" disabled>Pause</button>
+                <button id="resetBtn" class="btn btn-danger">Reset</button>
+            </div>
+        </section>
+
+        <!-- Visualization Section -->
+        <section class="visualization">
+            <div class="array-container" id="arrayContainer">
+                <!-- Bars will be generated here -->
+            </div>
+        </section>
+
+        <!-- Algorithm Info Section -->
+        <section class="algorithm-info">
+            <div class="algorithm-header">
+                <h3>Algorithm Pseudo-code</h3>
+                <button id="copyPseudoCode" class="copy-btn">
+                    <span class="copy-icon">📋</span>
+                    Copy Code
+                </button>
+            </div>
+            <div class="pseudo-code" id="pseudoCode">
+                <!-- Pseudo-code will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Array Size:</span>
+                <span class="stat-value" id="arraySize">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Comparisons:</span>
+                <span class="stat-value" id="comparisons">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Swaps:</span>
+                <span class="stat-value" id="swaps">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Time:</span>
+                <span class="stat-value" id="timeElapsed">0.00s</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
